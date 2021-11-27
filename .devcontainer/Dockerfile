@@ -30,5 +30,5 @@ WORKDIR /workspaces/Code
 #RUN pip3 install -r requirements.txt
 COPY requirements.txt /tmp/requirements.txt
 RUN python3 -m pip install -r /tmp/requirements.txt
-RUN git init
+
 
