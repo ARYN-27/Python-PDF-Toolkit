@@ -25,10 +25,38 @@ RUN sudo apt update && sudo apt-get upgrade -y
 RUN /usr/local/bin/python -m pip install -U ipykernel
 RUN /usr/local/bin/python -m pip install --upgrade pip
 
+####################################################################
+#installing python3-venv
+#RUN apt install -y python3-venv
+
+# For python env creation - env name => genesis
+
+#WORKDIR /workspaces/Code/genesis
+#RUN python3 -m venv dev_env
+#ENV virtualenv /dev_env
+#ENV PATH="/workspaces/Code/dev_env/bin:$PATH"
+#RUN source /workspaces/Code/dev_env/bin/activate
+
+#ENV Activation 
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
+#ENTRYPOINT ["/entrypoint.sh"]
+#RUN source dev_env/bin/activate
+####################################################################
+
+
+# Requirements install
 WORKDIR /workspaces/Code
-#RUN pip freeze > requirements.txt
-#RUN pip3 install -r requirements.txt
 COPY requirements.txt /tmp/requirements.txt
 RUN python3 -m pip install -r /tmp/requirements.txt
+
+#Welcome to GENESIS App Container
+#RUN echo "Welcome to GENESIS App Container"
+#CMD ["echo "Welcome to GENESIS App Container""]
+
+
+
+
+
 
 

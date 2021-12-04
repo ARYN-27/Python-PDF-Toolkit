@@ -1,5 +1,6 @@
 img2pdf
 PyPDF3
-docx2pdf 
+docx2pdf
+flask 
 
 ###PyPDF4####
